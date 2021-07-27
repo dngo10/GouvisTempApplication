@@ -31,3 +31,8 @@ class _ResultBody extends State<ResultBody>{
   }
 
 }
+
+class ResultOffSet{
+  //Services and dependency injection
+  
+}
