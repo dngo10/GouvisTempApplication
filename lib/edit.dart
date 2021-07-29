@@ -18,7 +18,7 @@ class EditPage extends StatelessWidget{
 }
 
 class EditBody extends StatefulWidget{
-
+  
   @override
   State<StatefulWidget> createState() {
     return _EditBody();

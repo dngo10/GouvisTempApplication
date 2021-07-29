@@ -53,7 +53,6 @@ class MyBody extends StatefulWidget{
 }
 
 class _MyBody extends State<MyBody>{
-  double numberOfApartMent = 1;
 
   bool isNumeric(String? s) {
     if (s == null) {
@@ -78,10 +77,11 @@ class _MyBody extends State<MyBody>{
           Container(
             padding: EdgeInsets.symmetric(horizontal: width*0.25),
             child: TextFormField(
+              initialValue: "1",
               decoration: InputDecoration(
                 hintText: 'Enter Number of Dwelling',
                 suffixIcon: IconButton(onPressed: (){if(_formKey1.currentState!.validate()){
-                  //RUN
+                      
                   }},
                   icon: Icon(Icons.calculate),
                 ),
@@ -94,7 +94,8 @@ class _MyBody extends State<MyBody>{
                 }else if(double.parse(value) < 1){
                   return 'Value must be greater than 1';
                 }else{
-                  numberOfApartMent = double.parse(value);
+                  Controller.fl.numberOfApartment = int.parse(value);
+                  
                   return null;
                 }
               },
@@ -166,10 +167,6 @@ class _MyBody extends State<MyBody>{
     );
   }
 
-  void fakeCheck(double heck) {
-
-  }
-
   Widget getIconOrText(String text, IconData icon){
     final double width = MediaQuery.of(context).size.width;
     const double max = 900;
@@ -186,7 +183,7 @@ class _MyBody extends State<MyBody>{
       (item) => DataRow(cells: [
         DataCell(Text(item.name)),
         DataCell(Text(item.amount.toString())),
-        DataCell(Text(item.prop.toString())),
+        DataCell(Text(item.getProbability(Controller.fl.numberOfApartment).toString())),
         DataCell(Text(item.gpm.toString())),
         DataCell(Icon(Icons.delete), onTap: () async{ 
           setState(() {

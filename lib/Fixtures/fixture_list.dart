@@ -2,18 +2,20 @@
 import 'package:flutter_application_1/Fixtures/fixture_unit.dart';
 
 class FixtureList{
+  int numberOfApartment = 0;
+
   final List<Fixture> _fixtureList = [
-    Fixture("Bathtub (no Shower)",                  0, 1,   5.5),
-    Fixture("Bidet",                                0, 1,   2.0),
-    Fixture("Combination Bath/Shower",              0, 5.5, 5.5),
-    Fixture("Faucet, Lavatory",                     0, 2,   1.5),
-    Fixture("Shower, per head (no Bathtub)",        0, 4.5, 2.0),
-    Fixture("Water Closet, 1.28 GPF Gravity Tank",  0, 1.0, 3.0),
-    Fixture("Dishwasher",                           0, 0.5, 1.3),
-    Fixture("Faucet, Kitchen Sink",                 0, 2.0, 2.2),
-    Fixture("Clothes Washer",                       0, 5.5, 3.5),
-    Fixture("Faucet, Laundry",                      0, 2,   2.0),
-    Fixture("Faucet, Bar Sink",                     0, 2.0, 1.5),
+    Fixture("Bathtub (no Shower)",                  0, 0.01,   5.5, -0.25, 1.2, 0.006),
+    Fixture("Bidet",                                0, 0.01,   2.0, -0.07, 0.75, 0.006),
+    Fixture("Combination Bath/Shower",              0, 0.055, 5.5, -0.28, 0.92, 0.022),
+    Fixture("Faucet, Lavatory",                     0, 0.02,   1.5, -0.15, 1.1, 0.014),
+    Fixture("Shower, per head (no Bathtub)",        0, 0.045, 2.0, -0.3, 0.82, 0.015),
+    Fixture("Water Closet, 1.28 GPF Gravity Tank",  0, 0.01, 3.0, -0.07, 0.75, 0.006), //TEST
+    Fixture("Dishwasher",                           0, 0.005, 1.3, -0.1, 1, 0.004),
+    Fixture("Faucet, Kitchen Sink",                 0, 0.02, 2.2, -0.15, 1.1, 0.014),
+    Fixture("Clothes Washer",                       0, 0.055, 3.5, -0.3, 0.95, 0.021),
+    Fixture("Faucet, Laundry",                      0, 0.02, 2.0, -0.15, 1.1, 0.014),
+    Fixture("Faucet, Bar Sink",                     0, 0.02, 1.5, -0.15, 1.1, 0.014),
   ];
 
   List<Fixture> getItems(){

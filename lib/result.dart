@@ -19,20 +19,25 @@ class ResultBody extends StatefulWidget{
   State<StatefulWidget> createState() {
     return _ResultBody();
   }
-
 }
 
 class _ResultBody extends State<ResultBody>{
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(child: Text("hello World!"),),
+      margin: EdgeInsets.only(top: 20.0, left: 20.0),
+      child: Column(
+        children: <Widget>[
+          Row(
+            children: [
+              Expanded(flex: 1,
+                child: Text("Test1"),
+              ),
+              Expanded(child: Text("abc"), flex: 3,)
+            ],
+          )
+        ],
+      )
     );
   }
-
-}
-
-class ResultOffSet{
-  //Services and dependency injection
-  
 }
