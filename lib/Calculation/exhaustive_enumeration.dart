@@ -1,5 +1,9 @@
+import 'package:flutter_application_1/Calculation/data_fu.dart';
+
 class ExhaustiveEnumberation{
-  
+  double ate = 0;
+  Map<String, Pair<int, int>> option = {};
+  double numberOfOption = 0;
 }
 
 /**
@@ -60,6 +64,32 @@ class ExhaustiveEnumberation{
  *  Push: The Producer determines when to send data to the Consumer. The Consumer is unaware of when it will receive that data.
  *        Promises are the most common type of Push system in Javascript today.
  * 
+ *  Observables are like functions with zero arguments, but generalize those to allow multiple values.
+ *  If you don't call the the observerable with subscribe, nothing happens.
+ * 
+ *  Subscribing to an Observable is analogous to calling a function.
+ * 
+ *  Observables are able to deliver values either synchronously or asynchronously.
+ *  Subsribing to an Observable is like calling a function, providing callbacks where the data will be delivered to.
+ *  
+ *  The Subscription represents the ONGOIN execution.
+ * 
+ *  A Subject is like an Observable, but can multicast to many Observers.
+ *  Subject are liek EventEmitters: they maintain a registry of many listeners.
+ *  
+ *  A "multicasted Observable" passes notifications through a Subject which may have many subscribers.
+ * 
+ *  BehaviorSubject:
+ *  Stores the lastest value emitted to its consumers, and whenever a new Observer subscribes, it will immediately receive the "current value".
+ * 
+ *  A ReplaySubject:
+ *  Records multiple values from the Observable execution and replays them to new subscriber.
+ * 
+ *  AsyncSubject:
+ *  The AsyncSubject is variant where only the last value of the Observable execution is sent to its observers.
+ *  
+ *  
+ * 
  * Observer:
  * 
  * Is a consumer of values delivered by an Observable.
@@ -110,11 +140,35 @@ class ExhaustiveEnumberation{
  *  A Subject is like an Observable, but can multicast to many Observers.
  *  Subjects are like EventEmitters: they main a registry of many listeners.
  * 
+ *  Every Subject is an Observable.
+ *  From the perspective of the observer, it cannot tell whether the Observable execution is coming from 
+ *  a plain unicast Observable or a Subject.
+ * 
+ *  Every subject is an Observer.
+ *  IT is an object withmethods next(v), error(e), and complete().
+ *  To feed new value to the Subject, just call next(theValue), and it will be multicasted.
+ * 
+ *  Since a Subject is an Observer, this also means you may provide a Subject a Subject as the argument to the subscribe
+ *  of any Observable.
+ * 
+ *  Multicasted Observables:
+ *  A "multicasted Observable" passes notifications through a Subject which may have many subscribers.
+ *  Whereas a plain "unicast Observable" only sends notifications to a single Observer.
+ *  
+ *  Multicasted Observables: Observers subscribe to an underlying Subject, and the Subject subscribes to the source Observable.
+ *  
+ *  Multicast returns an Observable that looks like a normal Observable, but works like a Subject when it comes
+ *  to subscribing. multicast returns a ConnectableObservable, which is simply an Observable with connect() method.
+ * 
+ *  The connect() method is important to determine exactly when the shared Observable execution will start.
+ *  
+ * 
+ *  Handling
+ *  
+ * 
  * Every Subject is an Observer. It is an object with the methods next(v), error(e), and complete(). To feed
  * a new value to the Subject, just call next(theValue), and it will be multicasted to the Observers registered
  * to listen to the Subject.
- * 
- * 
  * 
  * Defining Observers:
  *  next      : requried. A handler for each delivered value. Called zero or more times after execution starts.
@@ -135,4 +189,20 @@ class ExhaustiveEnumberation{
  * 
  * 
  * 
+ * 
+ */
+
+/**
+ * Angular Pipes:
+ *  DatePipe: Formats a date value according to locale rules.
+ *  UpperCasePipe: Tranforms text to all upper case.
+ *  LowerCasePipe: Transforms text to all lower case.
+ *  CurrencyPipe
+ *  PercentPipe
+ * 
+ *  Binding a property
+ *  [ngClass] = "classes"
+ *  [ngClass -- Angular]
+ *  
+ *  
  */

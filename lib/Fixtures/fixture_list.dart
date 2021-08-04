@@ -18,22 +18,30 @@ class FixtureList{
     Fixture("Faucet, Bar Sink",                     0, 0.02, 1.5, -0.15, 1.1, 0.014),
   ];
 
+  FixtureList(){
+    _currentFixtureList = List<Fixture>.from(_fixtureList);
+  }
+
+  List<Fixture> _currentFixtureList = [] ;
+
+  List<Fixture> getInitialItems(){
+    _currentFixtureList = List<Fixture>.from(_fixtureList);
+    return _currentFixtureList;
+  }
+  
   List<Fixture> getItems(){
-    return _fixtureList;
+    return _currentFixtureList;
   }
 
   void removeItem(int index){
     if(index > 11){
-      _fixtureList.removeAt(index);
+      _currentFixtureList.removeAt(index);
     }
   }
 
   void addItem(Fixture item){
-    _fixtureList.add(item);
+    _currentFixtureList.add(item);
   }
-
-
-
 }
 
 /**
