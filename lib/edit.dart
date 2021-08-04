@@ -1,7 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Fixtures/fixture_list.dart';
+
+import 'Fixtures/fixture_unit.dart';
 
 class EditPage extends StatelessWidget{
+  Fixture? fixture;
+
+  EditPage(Fixture? fixture){
+    this.fixture = fixture;
+    if(fixture != null){
+
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +71,7 @@ class _EditBody extends State<EditBody>{
                         choosen = newValue!;
                       });
                     },
-                    items: <String>['One', 'Two', 'Three', 'Four']
+                    items: FixtureList.
                     .map<DropdownMenuItem<String>>(
                       (String value) {
                         return DropdownMenuItem<String>(value: value, child: Text(value));
